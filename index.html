@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="keywords" content="空巢青年,独居,孤独经济,租房,消费,中文学习">
+<meta name="description" content="空巢青年——在大城市独居的年轻人越来越多，他们的生活方式催生了新的消费趋势。">
+<title>空巢青年_社会_中国新闻学习网</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23b52a2a'/><text x='50' y='70' text-anchor='middle' fill='white' font-size='52' font-weight='bold' font-family='sans-serif'>学</text></svg>">
+<style>
+:root{
+  --red:#b52a2a;
+  --red-light:#e85d5d;
+  --red-bg:#fff5f5;
+  --blue:#2563a8;
+  --blue-light:#e8f0fe;
+  --bg:#f0f2f5;
+  --card:#fff;
+  --text:#1a1a1a;
+  --text2:#5f6368;
+  --text3:#9aa0a6;
+  --border:#e8e8e8;
+  --shadow:0 1px 4px rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+body{font-family:-apple-system,"PingFang SC","Helvetica Neue","Microsoft YaHei","Source Han Sans SC",sans-serif;color:var(--text);background:var(--bg);font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ===== Top Accent Line ===== */
+.accent-line{height:3px;background:linear-gradient(90deg,var(--red) 0%,var(--red-light) 50%,#f5a623 100%)}
+
+/* ===== Header ===== */
+.site-header{background:var(--card);box-shadow:var(--shadow);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.logo-area{display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;background:var(--red);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:18px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-name{font-size:18px;font-weight:bold;color:var(--text);letter-spacing:1px}
+.logo-slogan{font-size:11px;color:var(--text3);letter-spacing:0.5px}
+.header-right{display:flex;align-items:center;gap:12px}
+.search-box{display:flex;align-items:center;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .2s}
+.search-box:focus-within{border-color:var(--red)}
+.search-box input{width:160px;height:32px;border:none;padding:0 14px;font-size:13px;outline:none;background:transparent}
+.search-box button{height:32px;padding:0 14px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:15px}
+.btn-mode{display:flex;align-items:center;gap:4px;padding:5px 12px;border-radius:16px;font-size:12px;cursor:pointer;transition:all .2s;border:1px solid var(--border);background:var(--card);color:var(--text2);white-space:nowrap;user-select:none;-webkit-user-select:none}
+.btn-mode:hover{border-color:var(--red);color:var(--red)}
+.btn-mode.active{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-mode .dot{width:6px;height:6px;border-radius:50%;background:var(--text3);transition:background .2s}
+.btn-mode.active .dot{background:#fff}
+
+/* ===== Nav ===== */
+.site-nav{background:var(--card);border-top:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;white-space:nowrap}
+.nav-link{padding:11px 16px;font-size:14px;color:var(--text2);transition:color .2s;position:relative;flex-shrink:0}
+.nav-link:hover,.nav-link.cur{color:var(--red)}
+.nav-link.cur::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:2px;background:var(--red);border-radius:1px}
+
+/* ===== Layout ===== */
+.page-wrap{max-width:1100px;margin:0 auto;padding:16px}
+.content-grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+
+/* ===== Article Card ===== */
+.article-card{background:var(--card);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+.article-inner{padding:28px 32px 32px}
+.article-title{font-size:26px;font-weight:700;line-height:1.5;color:var(--text);margin-bottom:16px}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:13px;color:var(--text3);padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.meta-source{color:var(--red);font-weight:500}
+
+.article-body{font-size:18px;line-height:2;color:#2c2c2c}
+.article-body p{text-indent:2em;margin:16px 0}
+.article-body p:first-child{margin-top:0}
+
+.article-footer{margin-top:28px;padding-top:16px;border-top:1px solid var(--border)}
+.article-editor{font-size:13px;color:var(--text3)}
+.article-tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.tag-item{display:inline-block;padding:4px 12px;background:var(--bg);border-radius:14px;font-size:12px;color:var(--text2);transition:all .2s}
+.tag-item:hover{background:var(--red-bg);color:var(--red)}
+
+/* ===== Sidebar ===== */
+.sidebar-card{background:var(--card);border-radius:10px;box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
+.sidebar-heading{font-size:16px;font-weight:600;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--red);display:flex;align-items:center;gap:6px}
+.sidebar-heading::before{content:'';display:inline-block;width:4px;height:16px;background:var(--red);border-radius:2px}
+.sidebar-list li{padding:9px 0;border-bottom:1px solid #f5f5f5;font-size:14px;line-height:1.6}
+.sidebar-list li:last-child{border-bottom:none}
+.sidebar-list a{color:var(--text);transition:color .2s;display:block}
+.sidebar-list a:hover{color:var(--red)}
+.sidebar-list .idx{display:inline-block;width:20px;height:20px;text-align:center;line-height:20px;font-size:11px;font-weight:bold;color:#fff;background:#ccc;border-radius:3px;margin-right:8px}
+.sidebar-list li:nth-child(-n+3) .idx{background:var(--red)}
+
+/* ===== Vocab ===== */
+.vocab{color:inherit;cursor:default;position:relative;transition:all .15s}
+body.learn .vocab{color:var(--blue);cursor:pointer;border-bottom:1.5px dotted #90b4e0;padding-bottom:1px}
+body.learn .vocab:hover{color:var(--red);border-bottom-color:var(--red)}
+body.learn .vocab:active{opacity:.7}
+@keyframes vpulse{0%{background:rgba(181,42,42,.12)}100%{background:transparent}}
+.vocab.flash{animation:vpulse 1.2s ease-out}
+
+/* ===== Popup (Desktop) ===== */
+.popup-overlay{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.25);z-index:500;display:none}
+.popup-overlay.on{display:block}
+
+.vocab-popup{position:fixed;z-index:600;background:var(--card);border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.18);padding:22px;min-width:270px;max-width:350px;display:none}
+.vocab-popup.on{display:block}
+
+.popup-handle{display:none}
+.popup-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.popup-word{font-size:28px;font-weight:700;color:var(--text)}
+.popup-x{width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text3);font-size:20px;border-radius:50%;flex-shrink:0;transition:background .15s}
+.popup-x:hover{background:var(--bg)}
+.popup-py{font-size:17px;color:var(--red);font-family:"Times New Roman",Georgia,serif;margin-bottom:3px;letter-spacing:.3px}
+.popup-pos{font-size:12px;color:var(--text3);margin-bottom:10px}
+.popup-en{font-size:15px;color:#333;line-height:1.6;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:10px}
+.popup-note{font-size:12px;color:var(--text2);line-height:1.6;background:#fafafa;border-radius:6px;padding:8px 10px;margin-bottom:12px;display:none}
+.popup-note.show{display:block}
+.popup-bottom{display:flex;align-items:center;justify-content:space-between}
+.popup-badge{font-size:11px;padding:3px 10px;border-radius:12px;font-weight:500}
+.popup-badge.lesson{background:var(--red-bg);color:var(--red);border:1px solid #fcc}
+.popup-badge.extra{background:var(--blue-light);color:var(--blue);border:1px solid #c1d9f5}
+.popup-speak{display:flex;align-items:center;gap:5px;padding:6px 14px;border-radius:18px;border:1px solid var(--border);background:none;cursor:pointer;font-size:13px;color:var(--text2);transition:all .2s}
+.popup-speak:hover{border-color:var(--red);color:var(--red)}
+.popup-speak:active{background:var(--red-bg)}
+
+/* ===== Mobile Bottom Sheet ===== */
+@media(max-width:768px){
+  .vocab-popup{
+    top:auto;bottom:0;left:0;right:0;
+    max-width:100%;min-width:0;width:100%;
+    border-radius:18px 18px 0 0;
+    padding:14px 24px calc(28px + env(safe-area-inset-bottom,0px));
+    box-shadow:0 -4px 30px rgba(0,0,0,.15)
+  }
+  .popup-handle{display:block;width:36px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 14px}
+  .popup-word{font-size:24px}
+  .popup-py{font-size:16px}
+}
+
+/* ===== Toast ===== */
+.toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.92);background:rgba(0,0,0,.78);color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;z-index:2000;opacity:0;transition:all .25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* ===== Footer ===== */
+.site-footer{background:#2c2c2c;color:#aaa;padding:24px 0;margin-top:20px;font-size:12px}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 16px;text-align:center;line-height:2}
+.footer-links{margin-bottom:8px}
+.footer-links a{color:#bbb;margin:0 6px}
+.footer-links a:hover{color:#fff}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .content-grid{grid-template-columns:1fr}
+  .search-box{display:none}
+}
+@media(max-width:600px){
+  .article-inner{padding:20px 18px 24px}
+  .article-title{font-size:22px}
+  .article-body{font-size:17px;line-height:1.9}
+  .article-meta{font-size:12px}
+  .header-inner{padding:8px 12px}
+  .logo-name{font-size:16px}
+  .logo-icon{width:32px;height:32px;font-size:16px;border-radius:7px}
+  .nav-link{padding:10px 14px;font-size:13px}
+  .page-wrap{padding:10px}
+  .sidebar-card{padding:16px}
+}
+</style>
+</head>
+<body class="learn">
+
+<!-- Accent Line -->
+<div class="accent-line"></div>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-icon">学</div>
+      <div class="logo-text">
+        <span class="logo-name">中国新闻学习网</span>
+        <span class="logo-slogan">读新闻 · 学中文</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="search-box">
+        <input type="text" placeholder="搜索文章...">
+        <button>🔍</button>
+      </div>
+      <div class="btn-mode active" id="btnMode">
+        <span class="dot"></span>
+        <span>学习</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Nav ===== -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="javascript:;" class="nav-link">首页</a>
+    <a href="javascript:;" class="nav-link cur">社会</a>
+    <a href="javascript:;" class="nav-link">经济</a>
+    <a href="javascript:;" class="nav-link">文化</a>
+    <a href="javascript:;" class="nav-link">科技</a>
+    <a href="javascript:;" class="nav-link">教育</a>
+    <a href="javascript:;" class="nav-link">生活</a>
+    <a href="javascript:;" class="nav-link">观点</a>
+    <a href="javascript:;" class="nav-link">视频</a>
+  </div>
+</nav>
+
+<!-- ===== Page Content ===== -->
+<div class="page-wrap">
+  <div class="content-grid">
+
+    <!-- Article -->
+    <main>
+      <div class="article-card">
+        <div class="article-inner">
+          <h1 class="article-title">空巢青年</h1>
+
+          <div class="article-meta">
+            <span class="meta-source">中国新闻学习网</span>
+            <span>2026-04-08 09:30</span>
+            <span>作者：杨斌</span>
+          </div>
+
+          <div class="article-body" id="articleBody">
+            <p>一个人住、一个人吃、三餐<span class="vocab" data-w="外卖">外卖</span>、四季<span class="vocab" data-w="淘宝">淘宝</span>……这些在大城市<span class="vocab" data-w="独居">独居</span>、<span class="vocab" data-w="年龄">年龄</span>在二三十岁左右的年轻人，常常被叫做"<span class="vocab" data-w="空巢青年">空巢青年</span>"。中国已经有<span class="vocab" data-w="超过">超过</span>一亿<span class="vocab" data-w="空巢青年">空巢青年</span>，他们大部分住在北京、上海、深圳等大城市。</p>
+
+            <p>很多<span class="vocab" data-w="空巢青年">空巢青年</span>选择租房。因为他们刚开始工作，工作还不太<span class="vocab" data-w="稳定">稳定</span>，有的人<span class="vocab" data-w="甚至">甚至</span>常常换工作、换城市，所以很难马上决定以后要在哪儿生活。还有一些人租房是因为<span class="vocab" data-w="交通">交通</span>更方便。要是公司离住的地方太远，路上花的时间就会很长。对他们来说，先在公司附近租房，可以让生活<span class="vocab" data-w="轻松">轻松</span>一点儿。</p>
+
+            <p>很多<span class="vocab" data-w="空巢青年">空巢青年</span>不<span class="vocab" data-w="考虑">考虑</span>买房。<span class="vocab" data-w="除了">除了</span>工作和<span class="vocab" data-w="交通">交通</span>这两个原因<span class="vocab" data-w="以外">以外</span>，在大城市买房的压力太大也是一个重要原因。虽然最近几年中国的房子便宜了一些，但是要还的<span class="vocab" data-w="贷款">贷款</span>还是会<span class="vocab" data-w="超过">超过</span>他们<span class="vocab" data-w="工资">工资</span>的<span class="vocab" data-w="三分之一">三分之一</span>，有的时候<span class="vocab" data-w="甚至">甚至</span>会<span class="vocab" data-w="超过">超过</span>他们<span class="vocab" data-w="工资">工资</span>的<span class="vocab" data-w="一半">一半</span>。他们不想把钱花在房子上，所以很多<span class="vocab" data-w="空巢青年">空巢青年</span>不打算买房。</p>
+
+            <p>因为<span class="vocab" data-w="空巢青年">空巢青年</span>越来越多，和<span class="vocab" data-w="独居">独居</span>生活有关的<span class="vocab" data-w="产品">产品</span>和<span class="vocab" data-w="服务">服务</span>也越来越多。比如，一人食餐厅、小<span class="vocab" data-w="包装">包装</span><span class="vocab" data-w="产品">产品</span>越来越受欢迎。在<span class="vocab" data-w="住房">住房</span>上，大城市里的<span class="vocab" data-w="迷你">迷你</span><span class="vocab" data-w="公寓">公寓</span>越来越多，<span class="vocab" data-w="迷你">迷你</span><span class="vocab" data-w="洗衣机">洗衣机</span>、<span class="vocab" data-w="迷你">迷你</span><span class="vocab" data-w="冰箱">冰箱</span>也越来越常见。<span class="vocab" data-w="可见">可见</span>，<span class="vocab" data-w="空巢青年">空巢青年</span>也带来了新的<span class="vocab" data-w="消费">消费</span><span class="vocab" data-w="需求">需求</span>，"<span class="vocab" data-w="孤独">孤独</span><span class="vocab" data-w="经济">经济</span>"也越来越受到人们的<span class="vocab" data-w="关注">关注</span>。</p>
+          </div>
+
+          <div class="article-footer">
+            <p class="article-editor">责任编辑：王文涛</p>
+            <div class="article-tags">
+              <a href="javascript:;" class="tag-item">空巢青年</a>
+              <a href="javascript:;" class="tag-item">独居生活</a>
+              <a href="javascript:;" class="tag-item">租房</a>
+              <a href="javascript:;" class="tag-item">消费趋势</a>
+              <a href="javascript:;" class="tag-item">孤独经济</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside>
+      <div class="sidebar-card">
+        <h3 class="sidebar-heading">热门推荐</h3>
+        <ul class="sidebar-list">
+          <li><span class="idx">1</span><a href="javascript:;">95后消费观调查：年轻人更愿意为爱好花钱</a></li>
+          <li><span class="idx">2</span><a href="javascript:;">大城市租房成本持续走高 青年住房需求引关注</a></li>
+          <li><span class="idx">3</span><a href="javascript:;">2026春季就业报告：新兴行业成求职热门</a></li>
+          <li><span class="idx">4</span><a href="javascript:;">迷你家电销量增长迅速 "一人份"成为新趋势</a></li>
+          <li><span class="idx">5</span><a href="javascript:;">数字经济时代：外卖平台改变城市生活方式</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3 class="sidebar-heading">大家都在看</h3>
+        <ul class="sidebar-list">
+          <li><a href="javascript:;">报告：中国独居人口已接近一亿 催生"一人经济"</a></li>
+          <li><a href="javascript:;">专家解读：年轻人应该租房还是买房？</a></li>
+          <li><a href="javascript:;">"小份菜"受热捧 一人食如何改变餐饮业？</a></li>
+          <li><a href="javascript:;">多地推出青年租房补贴 助力新市民安居乐业</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="javascript:;">关于我们</a> |
+      <a href="javascript:;">联系方式</a> |
+      <a href="javascript:;">投稿须知</a> |
+      <a href="javascript:;">版权声明</a> |
+      <a href="javascript:;">友情链接</a>
+    </div>
+    <p>本站内容仅供中文学习使用，如有问题请联系编辑部。</p>
+    <p>&copy; 2024-2026 中国新闻学习网 cnxuexi.net&ensp;|&ensp;All Rights Reserved</p>
+  </div>
+</footer>
+
+<!-- ===== Overlay ===== -->
+<div class="popup-overlay" id="overlay"></div>
+
+<!-- ===== Vocab Popup ===== -->
+<div class="vocab-popup" id="popup">
+  <div class="popup-handle"></div>
+  <div class="popup-top">
+    <span class="popup-word" id="pWord"></span>
+    <span class="popup-x" id="pClose">&times;</span>
+  </div>
+  <div class="popup-py" id="pPy"></div>
+  <div class="popup-pos" id="pPos"></div>
+  <div class="popup-en" id="pEn"></div>
+  <div class="popup-note" id="pNote"></div>
+  <div class="popup-bottom">
+    <span class="popup-badge" id="pBadge"></span>
+    <button class="popup-speak" id="pSpeak">🔊 发音</button>
+  </div>
+</div>
+
+<!-- ===== Toast ===== -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ========== Vocabulary Data ========== */
+var V = {
+  "年龄":     {py:"niánlíng",  ps:"名词",   en:"age",                                  t:1},
+  "青年":     {py:"qīngnián",  ps:"名词",   en:"youth; young person",                   t:1},
+  "超过":     {py:"chāoguò",   ps:"动词",   en:"to exceed; to surpass",                 t:1},
+  "稳定":     {py:"wěndìng",   ps:"形容词", en:"stable; steady",                        t:1},
+  "甚至":     {py:"shènzhì",   ps:"连词",   en:"even; so much so that",                 t:1},
+  "交通":     {py:"jiāotōng",  ps:"名词",   en:"transportation; traffic",               t:1},
+  "考虑":     {py:"kǎolǜ",     ps:"动词",   en:"to consider; to think over",            t:1},
+  "除了":     {py:"chúle",     ps:"介词",   en:"besides; except for",                   t:1,
+               nt:"搭配：除了……以外，还/也/都……"},
+  "以外":     {py:"yǐwài",     ps:"名词",   en:"beyond; outside of; other than",        t:1,
+               nt:"搭配：除了……以外，还/也/都……"},
+  "贷款":     {py:"dàikuǎn",   ps:"名/动",  en:"loan; to take out a loan",              t:1},
+  "工资":     {py:"gōngzī",    ps:"名词",   en:"salary; wages",                         t:1},
+  "三分之一": {py:"sān fēn zhī yī", ps:"",  en:"one third (1/3)",                       t:1,
+               nt:"分数读法：先分母，再"分之"，后分子。如 百分之三十 = 30%"},
+  "一半":     {py:"yíbàn",     ps:"数词",   en:"half; one half",                        t:1},
+  "住房":     {py:"zhùfáng",   ps:"名词",   en:"housing; residence",                    t:1},
+  "消费":     {py:"xiāofèi",   ps:"动/名",  en:"to consume; consumption; spending",      t:1},
+  "需求":     {py:"xūqiú",     ps:"名词",   en:"demand; need; requirement",             t:1},
+  "可见":     {py:"kějiàn",    ps:"连词",   en:"it is evident that; obviously",          t:1},
+
+  "空巢青年": {py:"kōngcháo qīngnián", ps:"",en:"empty-nest youth (young people living alone in big cities)", t:0,
+               nt:"空巢 kōngcháo = empty nest; 青年 qīngnián = youth（第28课生词）"},
+  "独居":     {py:"dújū",      ps:"动词",   en:"to live alone",                         t:0},
+  "外卖":     {py:"wàimài",    ps:"名词",   en:"takeout; food delivery",                t:0},
+  "淘宝":     {py:"Táobǎo",    ps:"专名",   en:"Taobao (major Chinese online shopping platform)", t:0},
+  "轻松":     {py:"qīngsōng",  ps:"形容词", en:"relaxed; easy; light",                  t:0},
+  "产品":     {py:"chǎnpǐn",   ps:"名词",   en:"product; goods",                       t:0},
+  "服务":     {py:"fúwù",      ps:"名/动",  en:"service; to serve",                     t:0},
+  "包装":     {py:"bāozhuāng", ps:"名/动",  en:"packaging; to package",                 t:0},
+  "迷你":     {py:"mínǐ",      ps:"形容词", en:"mini; miniature",                       t:0},
+  "公寓":     {py:"gōngyù",    ps:"名词",   en:"apartment; flat",                       t:0},
+  "洗衣机":   {py:"xǐyījī",    ps:"名词",   en:"washing machine",                       t:0},
+  "冰箱":     {py:"bīngxiāng", ps:"名词",   en:"refrigerator; fridge",                  t:0},
+  "孤独":     {py:"gūdú",      ps:"形容词", en:"lonely; solitary",                      t:0},
+  "经济":     {py:"jīngjì",    ps:"名词",   en:"economy; economics",                    t:0},
+  "关注":     {py:"guānzhù",   ps:"动词",   en:"to pay attention to; to follow closely", t:0}
+};
+
+/* ========== Speech ========== */
+var zhVoice = null;
+function loadVoices(){
+  var vs = speechSynthesis.getVoices();
+  zhVoice = vs.find(function(v){return v.lang==='zh-CN'})
+         || vs.find(function(v){return v.lang.indexOf('zh')===0})
+         || null;
+}
+if('speechSynthesis' in window){
+  loadVoices();
+  if(speechSynthesis.onvoiceschanged!==undefined) speechSynthesis.onvoiceschanged=loadVoices;
+}
+function speak(t){
+  if(!('speechSynthesis' in window)){toast('浏览器不支持语音');return}
+  speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=0.78;
+  if(zhVoice)u.voice=zhVoice;
+  speechSynthesis.speak(u);
+}
+
+/* ========== Popup ========== */
+var popup=document.getElementById('popup');
+var overlay=document.getElementById('overlay');
+var curWord='';
+
+function isMobile(){return window.innerWidth<=768}
+
+function showPopup(el){
+  var w=el.getAttribute('data-w');
+  var d=V[w];
+  if(!d) return;
+  curWord=w;
+
+  document.getElementById('pWord').textContent=w;
+  document.getElementById('pPy').textContent=d.py;
+  document.getElementById('pPos').textContent=d.ps||'';
+  document.getElementById('pEn').textContent=d.en;
+
+  var noteEl=document.getElementById('pNote');
+  if(d.nt){noteEl.textContent=d.nt;noteEl.className='popup-note show'}
+  else{noteEl.className='popup-note'}
+
+  var badge=document.getElementById('pBadge');
+  if(d.t===1){badge.textContent='第28课';badge.className='popup-badge lesson'}
+  else{badge.textContent='补充词汇';badge.className='popup-badge extra'}
+
+  if(!isMobile()){
+    popup.style.top='-9999px';
+    popup.style.left='-9999px';
+    popup.style.bottom='auto';
+    popup.style.right='auto';
+  }else{
+    popup.style.top='';
+    popup.style.left='';
+    popup.style.bottom='';
+    popup.style.right='';
+  }
+
+  popup.classList.add('on');
+  overlay.classList.add('on');
+
+  if(!isMobile()){
+    var r=el.getBoundingClientRect();
+    var pw=popup.offsetWidth;
+    var ph=popup.offsetHeight;
+    var top=r.bottom+10;
+    var left=r.left+(r.width/2)-(pw/2);
+    if(top+ph>window.innerHeight-20) top=r.top-ph-10;
+    if(left<10) left=10;
+    if(left+pw>window.innerWidth-10) left=window.innerWidth-pw-10;
+    if(top<10) top=10;
+    popup.style.top=top+'px';
+    popup.style.left=left+'px';
+  }
+
+  el.classList.add('flash');
+  setTimeout(function(){el.classList.remove('flash')},1200);
+}
+
+function hidePopup(){
+  popup.classList.remove('on');
+  overlay.classList.remove('on');
+  curWord='';
+}
+
+/* ========== Events ========== */
+var allVocab=document.querySelectorAll('.vocab');
+for(var i=0;i<allVocab.length;i++){
+  allVocab[i].addEventListener('click',function(e){
+    if(document.body.classList.contains('learn')){
+      e.preventDefault();
+      e.stopPropagation();
+      showPopup(this);
+    }
+  });
+}
+
+document.getElementById('pClose').addEventListener('click',function(e){
+  e.stopPropagation();
+  hidePopup();
+});
+overlay.addEventListener('click',hidePopup);
+document.getElementById('pSpeak').addEventListener('click',function(e){
+  e.stopPropagation();
+  if(curWord) speak(curWord);
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')hidePopup()});
+
+/* ========== Learning Mode ========== */
+var btn=document.getElementById('btnMode');
+var learning=false;
+function setLearn(on,silent){
+  learning=on;
+  if(on){
+    document.body.classList.add('learn');
+    btn.classList.add('active');
+    if(!silent) toast('学习模式已开启 · 点击蓝色词语查看释义');
+  }else{
+    document.body.classList.remove('learn');
+    btn.classList.remove('active');
+    hidePopup();
+    if(!silent) toast('学习模式已关闭');
+  }
+}
+btn.addEventListener('click',function(){setLearn(!learning)});
+
+setLearn(true,true);
+
+/* ========== Toast ========== */
+var _tt;
+function toast(msg){
+  var el=document.getElementById('toast');
+  if(!el) return;
+  el.textContent=msg;
+  el.classList.add('show');
+  clearTimeout(_tt);
+  _tt=setTimeout(function(){el.classList.remove('show')},2500);
+}
+
+</script>
+</body>
+</html>
