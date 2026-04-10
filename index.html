@@ -63,8 +63,9 @@ body{font-family:-apple-system,"PingFang SC","Helvetica Neue","Microsoft YaHei",
 .sidebar-list li:nth-child(-n+3) .idx{background:var(--red)}
 
 /* ===== Vocab Words ===== */
-.v{color:var(--blue);cursor:pointer;border-bottom:1.5px dotted #90b4e0;padding-bottom:1px;-webkit-tap-highlight-color:rgba(37,99,168,.15)}
-.v:active{opacity:.6}
+.v{-webkit-tap-highlight-color:rgba(37,99,168,.15)}
+.v.on{color:var(--blue);cursor:pointer;border-bottom:1.5px dotted #90b4e0;padding-bottom:1px}
+.v.on:active{opacity:.6}
 
 /* ===== Modal Overlay ===== */
 #mo{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:900}
@@ -130,7 +131,7 @@ body{font-family:-apple-system,"PingFang SC","Helvetica Neue","Microsoft YaHei",
         <input type="text" placeholder="搜索文章...">
         <button>🔍</button>
       </div>
-      <div class="btn-mode active" id="btnMode" onclick="toggleMode()">学习模式</div>
+      <div class="btn-mode" id="btnMode" onclick="toggleMode()">Study Mode</div>
     </div>
   </div>
 </header>
@@ -278,6 +279,7 @@ var D={
 var _cw="";
 
 function w(el){
+  if(!_studyOn) return;
   var k=el.getAttribute("data-k");
   var d=D[k];
   if(!d) return;
@@ -317,25 +319,18 @@ function sayIt(){
   speechSynthesis.speak(u);
 }
 
+var _studyOn=false;
 function toggleMode(){
+  _studyOn=!_studyOn;
   var el=document.getElementById("btnMode");
   var spans=document.querySelectorAll(".v");
-  if(el.classList.contains("active")){
-    el.classList.remove("active");
-    for(var i=0;i<spans.length;i++){
-      spans[i].style.color="inherit";
-      spans[i].style.borderBottom="none";
-      spans[i].style.cursor="default";
-      spans[i].onclick=null;
-    }
-  }else{
+  if(_studyOn){
     el.classList.add("active");
-    for(var i=0;i<spans.length;i++){
-      spans[i].style.color="";
-      spans[i].style.borderBottom="";
-      spans[i].style.cursor="";
-      spans[i].onclick=function(){w(this)};
-    }
+    for(var i=0;i<spans.length;i++) spans[i].classList.add("on");
+  }else{
+    el.classList.remove("active");
+    closePopup();
+    for(var i=0;i<spans.length;i++) spans[i].classList.remove("on");
   }
 }
 </script>
